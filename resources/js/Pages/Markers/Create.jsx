@@ -1,14 +1,15 @@
 import { useForm } from '@inertiajs/react';
 export default function Create(){
     const { data, setData, post, processing, reset } = useForm({
-        image: "",
-        title: "",
-        main: "",
+        x: "",
+        y: "",
+        adress: "",
+        
 
         });
         function submit(e) {
             e.preventDefault();
-            post('/admin/news/create',{
+            post('/admin/markers/create',{
                 onFinish: () => reset(),
             });}
     return(
@@ -16,34 +17,33 @@ export default function Create(){
                     
                     <div className="flex items-stretch flex-col">
                     <input
-                        id="image"
-                        name="image"
-                        value={data.image}
-                        placeholder="Шлях до фото"
+                        id="x"
+                        name="x"
+                        value={data.x}
+                        placeholder="X-координата"
                         className="mx-6 mb-6  w-auto bg-white border-slate-200 
                         border-2 placeholder:px-3 placeholder-zinc-400 " 
-                        onChange={(e) => setData("image", e.target.value)}
+                        onChange={(e) => setData("x", e.target.value)}
                     />
                     <input
-                        id="title"
-                        name="title"
-                        value={data.title}
-                        placeholder="Заголовок"
+                        id="y"
+                        name="y"
+                        value={data.y}
+                        placeholder="Y-координата"
                         className="mx-6 mb-6 block w-auto bg-white border-slate-200 
                         border-2 placeholder:px-3 placeholder-zinc-400"
-                        onChange={(e) => setData("title", e.target.value)}
+                        onChange={(e) => setData("y", e.target.value)}
                     />
                     <input
-                        id="main"
-                        name="main"
-                        
-                        value={data.main}
-                        placeholder="Новина"
+                        id="adress"
+                        name="adress"
+                        value={data.adress}
+                        placeholder="Адреса"
                         className="mx-6 mb-6 block w-auto bg-white border-slate-200 
                         border-2 placeholder:px-3 placeholder-zinc-400"
-                        onChange={(e) => setData("main", e.target.value)}
+                        onChange={(e) => setData("adress", e.target.value)}
                     />
-                   
+                    
                 <button type="submit" className=" bg-sky-300 mx-32 rounded-md hover:bg-sky-500" disabled={processing}>Створити</button>
                     </div>
                 </form>

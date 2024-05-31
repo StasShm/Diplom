@@ -3,14 +3,12 @@ export default function Create(){
     const { data, setData, post, processing, reset } = useForm({
         name: "",
         price: "",
-        class: "",
+        type: "",
         image: "",
-        mass: "",
-
         });
         function submit(e) {
             e.preventDefault();
-            post('/admin/snacks/create',{
+            post('/admin/others/create',{
                 onFinish: () => reset(),
             });}
     return(
@@ -36,23 +34,15 @@ export default function Create(){
                         onChange={(e) => setData("price", e.target.value)}
                     />
                     <input
-                        id="class"
-                        name="class"
-                        value={data.class}
-                        placeholder="Тип"
+                        id="type"
+                        name="type"
+                        value={data.type}
+                        placeholder="Класифікація"
                         className="mx-6 mb-6 block w-auto bg-white border-slate-200 
                         border-2 placeholder:px-3 placeholder-zinc-400"
-                        onChange={(e) => setData("class", e.target.value)}
+                        onChange={(e) => setData("type", e.target.value)}
                     />
-                    <input
-                        id="mass"
-                        name="mass"
-                        value={data.mass}
-                        placeholder="Вага"
-                        className="mx-6 mb-6 block w-auto bg-white border-slate-200 
-                        border-2 placeholder:px-3 placeholder-zinc-400"
-                        onChange={(e) => setData("mass", e.target.value)}
-                    />
+                    
                     <input
                         id="image"
                         name="image"

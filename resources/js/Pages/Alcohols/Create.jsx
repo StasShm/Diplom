@@ -9,8 +9,9 @@ export default function Create(){
         });
         function submit(e) {
             e.preventDefault();
-            post('alcohol.store')
-        }; 
+            post('/admin/alcohols/create',{
+                onFinish: () => reset(),
+            });}
     return(
         <form onSubmit={submit}>
                     
@@ -49,7 +50,7 @@ export default function Create(){
                         placeholder="Об'єм"
                         className="mx-6 mb-6  w-auto bg-white border-slate-200 
                         border-2 placeholder:px-3 placeholder-zinc-400 " 
-                        onChange={(e) => setData("name", e.target.value)}
+                        onChange={(e) => setData("volume", e.target.value)}
                     />
                     <input
                         id="image"

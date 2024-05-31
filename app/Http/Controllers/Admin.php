@@ -17,8 +17,9 @@ class Admin extends Controller
         ]);
         if (Auth::attempt($data)) {
             $request->session()->regenerate();
-            return inertia('Admin', []);
+            // return inertia('Admin', []);
+            return to_route('admin');
         } 
-        return inertia('Main');
+        return to_route('main');
     }
 }

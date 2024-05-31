@@ -10,7 +10,7 @@ export default function Create(){
             e.preventDefault();
             post('/admin/cigarets/create',{
                 onFinish: () => reset(),
-            });}; 
+            });}
     return(
         <form onSubmit={submit}>
                     

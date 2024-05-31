@@ -7,43 +7,53 @@ use App\Http\Controllers\AlcoholController;
 use App\Http\Controllers\SnacksController;
 use App\Http\Controllers\CigaretsController;
 use App\Http\Controllers\MarkersController;
+use App\Http\Controllers\OthersController;
+use App\Http\Controllers\NewsController;
+
+
+
+
 
 use Inertia\Inertia;
 Route::get('/', [MarkersController::class,'show']);
 Route::get('/blog', function () {
     return inertia('Blog');
 });
-Route::get('/beer', function () {
-    return inertia('Beer');
-});
-Route::get('/snacks', function () {
-    return inertia('Snacks');
-});
-Route::get('/alcohol', function () {
-    return inertia('Alcohol;');
-});
 Route::get('/about', function () {
     return inertia('About');
 });
-Route::get('/catalog', [TovarController::class,'show']);
+
+Route::get('/catalog', [TovarController::class,'show'])->name('main');
 Route::post('/login', [Admin::class, 'login'])->name('login');
 Route::get('/admin', function () {
     return inertia('Admin');
-});
-Route::get('/admin/beer/create',[BeerController::class,'create'])->name('beers.create');
-Route::post('/admin/beer/create',[BeerController::class,'store'])->name('beers.store');
-Route::get('/admin/beer/index',[BeerController::class,'index']);
+})->name('admin');
+Route::get('/admin/beers/create',[BeerController::class,'create'])->name('beers.create');
+Route::post('/admin/beers/create',[BeerController::class,'store'])->name('beers.store');
+Route::get('/admin/beers/index',[BeerController::class,'index']);
 
-Route::get('/admin/alcohol/create',[AlcoholController::class,'create']);
-Route::get('/admin/alcohol/index',[AlcoholController::class,'index']);
 
-Route::get('/admin/snacks/create',[SnacksController::class,'create']);
-Route::get('/admin/snacks/index',[SnacksController::class,'index']);
-
-// Route::get('/admin/cigarets/create',[CigaretsController::class,'create']);
-// Route::get('/admin/cigarets/index',[CigaretsController::class,'index']);
 
 Route::get('/admin/cigarets/create',[CigaretsController::class,'create'])->name('cigarets.create');
 Route::post('/admin/cigarets/create',[CigaretsController::class,'store'])->name('cigarets.store');
 Route::get('/admin/cigarets/index',[CigaretsController::class,'index']);
 
+Route::get('/admin/snacks/create',[SnacksController::class,'create'])->name('snacks.create');
+Route::post('/admin/snacks/create',[SnacksController::class,'store'])->name('snacks.store');
+Route::get('/admin/snacks/index',[SnacksController::class,'index']);
+
+Route::get('/admin/others/create',[OthersController::class,'create'])->name('others.create');
+Route::post('/admin/others/create',[OthersController::class,'store'])->name('others.store');
+Route::get('/admin/others/index',[OthersController::class,'index']);
+
+Route::get('/admin/alcohols/create',[AlcoholController::class,'create'])->name('alcohols.create');
+Route::post('/admin/alcohols/create',[AlcoholController::class,'store'])->name('alcohols.store');
+Route::get('/admin/alcohols/index',[AlcoholController::class,'index']);
+
+Route::get('/admin/news/create',[NewsController::class,'create'])->name('news.create');
+Route::post('/admin/news/create',[NewsController::class,'store'])->name('news.store');
+Route::get('/admin/news/index',[NewsController::class,'index']);
+
+Route::get('/admin/markers/create',[MarkersController::class,'create'])->name('markers.create');
+Route::post('/admin/markers/create',[MarkersController::class,'store'])->name('markers.store');
+Route::get('/admin/markers/index',[MarkersController::class,'index']);

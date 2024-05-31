@@ -1,12 +1,11 @@
 import { useForm } from '@inertiajs/react';
-import Snacks from '../../componets/Snacks';
 export default function Edit({snack}){
     const { data, setData, put, processing, reset } = useForm({
         name: snack.name,
         price: snack.price,
-        class: alcohol.class,
-        volume: snack.volume,
+        class: snack.class,
         image: snack.image,
+        mass: snack.mass
         });
         function submit(e) {
             e.preventDefault();
@@ -35,6 +34,15 @@ export default function Edit({snack}){
                         onChange={(e) => setData("price", e.target.value)}
                     />
                     <input
+                        id="class"
+                        name="class"
+                        value={data.class}
+                        placeholder="Тип"
+                        className="mx-6 mb-6 block w-auto bg-white border-slate-200 
+                        border-2 placeholder:px-3 placeholder-zinc-400"
+                        onChange={(e) => setData("class", e.target.value)}
+                    />
+                    <input
                         id="mass"
                         name="mass"
                         value={data.mass}
@@ -42,15 +50,6 @@ export default function Edit({snack}){
                         className="mx-6 mb-6 block w-auto bg-white border-slate-200 
                         border-2 placeholder:px-3 placeholder-zinc-400"
                         onChange={(e) => setData("mass", e.target.value)}
-                    />
-                    <input
-                        id="class"
-                        name="class"
-                        value={data.class}
-                        placeholder="Класифікація"
-                        className="mx-6 mb-6 block w-auto bg-white border-slate-200 
-                        border-2 placeholder:px-3 placeholder-zinc-400"
-                        onChange={(e) => setData("class", e.target.value)}
                     />
                     <input
                         id="image"

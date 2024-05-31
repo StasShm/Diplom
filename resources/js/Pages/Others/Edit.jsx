@@ -1,18 +1,16 @@
 import { useForm } from '@inertiajs/react';
-export default function Create(){
-    const { data, setData, post, processing, reset } = useForm({
-        name: "",
-        price: "",
-        class: "",
-        image: "",
-        mass: "",
-
+import Others from '../../componets/Other';
+export default function Edit({snack}){
+    const { data, setData, put, processing, reset } = useForm({
+        name: other.name,
+        price: other.price,
+        type: other.type,
+        image: snack.image,
         });
         function submit(e) {
             e.preventDefault();
-            post('/admin/snacks/create',{
-                onFinish: () => reset(),
-            });}
+            put('other.update')
+        }; 
     return(
         <form onSubmit={submit}>
                     
@@ -36,23 +34,15 @@ export default function Create(){
                         onChange={(e) => setData("price", e.target.value)}
                     />
                     <input
-                        id="class"
-                        name="class"
-                        value={data.class}
+                        id="type"
+                        name="type"
+                        value={data.type}
                         placeholder="Тип"
                         className="mx-6 mb-6 block w-auto bg-white border-slate-200 
                         border-2 placeholder:px-3 placeholder-zinc-400"
-                        onChange={(e) => setData("class", e.target.value)}
+                        onChange={(e) => setData("type", e.target.value)}
                     />
-                    <input
-                        id="mass"
-                        name="mass"
-                        value={data.mass}
-                        placeholder="Вага"
-                        className="mx-6 mb-6 block w-auto bg-white border-slate-200 
-                        border-2 placeholder:px-3 placeholder-zinc-400"
-                        onChange={(e) => setData("mass", e.target.value)}
-                    />
+                   
                     <input
                         id="image"
                         name="image"
@@ -62,7 +52,7 @@ export default function Create(){
                         border-2 placeholder:px-3 placeholder-zinc-400"
                         onChange={(e) => setData("image", e.target.value)}
                     />
-                <button type="submit" className=" bg-sky-300 mx-32 rounded-md hover:bg-sky-500" disabled={processing}>Створити</button>
+                <button type="submit" className=" bg-sky-300 mx-32 rounded-md hover:bg-sky-500" disabled={processing}>Змінити</button>
                     </div>
                 </form>
                 

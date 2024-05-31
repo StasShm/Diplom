@@ -43,12 +43,12 @@ export default function Admin({auth}){
                 </form>
                 
             }  
-            <Link href="/admin/addnews">Додати новину</Link>
+            <Link href="/admin/news/create">Додати новину</Link>
             
-            <Link href="/admin/addalcohol">Додати алкоголь</Link>  
-            <Link href="/admin/addcigarets">Додати цигарки</Link>
-            <Link href="/admin/addsnacks">Додати снеки</Link>
-            <Link href="/admin/addother">Додати інші товари</Link>
+            <Link href="/admin/alcohols/create">Додати алкоголь</Link>  
+            <Link href="/admin/cigarets/create">Додати цигарки</Link>
+            <Link href="/admin/snacks/create">Додати снеки</Link>
+            <Link href="/admin/others/create">Додати інші товари</Link>
             </>         
     )
 }

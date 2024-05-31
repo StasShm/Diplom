@@ -1,4 +1,4 @@
-import { useForm } from '@inertiajs/react';
+import { useForm, Link } from '@inertiajs/react';
 export default function Create(){
     const { data, setData, post, processing, reset } = useForm({
         name: "",
@@ -8,12 +8,13 @@ export default function Create(){
         });
         function submit(e) {
             e.preventDefault();
-            post('/admin/beer/create',{
+            post('/admin/beers/create',{
                 onFinish: () => reset(),
             });
 
         }; 
     return(
+        <>
         <form onSubmit={submit}>
                     
                     <div className="flex items-stretch flex-col">
@@ -56,6 +57,7 @@ export default function Create(){
                 <button type="submit" className=" bg-sky-300 mx-32 rounded-md hover:bg-sky-500" disabled={processing}>Створити</button>
                     </div>
                 </form>
+                <Link href='/admin'>Повернутися</Link></>
                 
             
     )

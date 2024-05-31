@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Markers extends Model
 {
     use HasFactory;
+    protected $fillable = ['x', 'y', 'adress' ];
 }
