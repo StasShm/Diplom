@@ -1,6 +1,6 @@
 import { Link, useForm } from '@inertiajs/react';
 
-export default function Index({alcohols}){
+export default function Index({snacks}){
     return(
         <>{snacks.map((snack) => (
          <div key={snack.id} >
@@ -10,7 +10,6 @@ export default function Index({alcohols}){
                  <p>{snack.mass}</p>
                  <p>{snack.class}</p>
                  <p>{snack.price}₴</p>
- 
              </div>
          </div>
         )

@@ -1,6 +1,14 @@
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick/lib/slider";
 export default function  Beer({beers}){
+    var settings ={
+        slidesToShow: 4,
+    }
     return(
-       <>{beers.map((beer) => (
+       <>
+       <Slider {...settings}>
+        {beers.map((beer) => (
         <div key={beer.id} >
             <div>
                 <img src={beer.image} />
@@ -13,7 +21,7 @@ export default function  Beer({beers}){
        )
 
 
-    )}</>
+    )}</Slider></>
     )
 }
 

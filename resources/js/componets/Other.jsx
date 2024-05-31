@@ -1,6 +1,9 @@
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick/lib/slider";
 export default function  Other({others}){
     return(
-       <>{others.map((other) => (
+       <><Slider>{others.map((other) => (
         <div key={other.id} >
             <div>
                 <img src={other.image} />
@@ -13,6 +16,6 @@ export default function  Other({others}){
        )
 
 
-    )}</>
+    )}</Slider></>
     )
 }

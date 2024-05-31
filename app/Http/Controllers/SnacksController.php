@@ -1,9 +1,9 @@
-?php
+<?php
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\SnacksController;
+use App\Models\Snacks;
 
 class SnacksController extends Controller
 {

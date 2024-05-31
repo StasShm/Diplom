@@ -1,17 +1,14 @@
 import { useForm } from '@inertiajs/react';
-export default function Create(){
-    const { data, setData, post, processing, reset } = useForm({
-        name: "",
-        price: "",
-        class: "",
-        image: "",
+export default function Edit({cigaret}){
+    const { data, setData, put, processing, reset } = useForm({
+        name: cigaret.name,
+        price: cigaret.price,
+        nicotine: cigaret.class,
+        image: cigaret.image,
         });
         function submit(e) {
             e.preventDefault();
-            post('/admin/beer/create',{
-                onFinish: () => reset(),
-            });
-
+            put('cigaret.update')
         }; 
     return(
         <form onSubmit={submit}>
@@ -38,8 +35,8 @@ export default function Create(){
                     <input
                         id="class"
                         name="class"
-                        value={data.class}
-                        placeholder="Класифікація"
+                        value={data.nicotine}
+                        placeholder="Нікотин/смоли"
                         className="mx-6 mb-6 block w-auto bg-white border-slate-200 
                         border-2 placeholder:px-3 placeholder-zinc-400"
                         onChange={(e) => setData("class", e.target.value)}
@@ -53,7 +50,7 @@ export default function Create(){
                         border-2 placeholder:px-3 placeholder-zinc-400"
                         onChange={(e) => setData("image", e.target.value)}
                     />
-                <button type="submit" className=" bg-sky-300 mx-32 rounded-md hover:bg-sky-500" disabled={processing}>Створити</button>
+                <button type="submit" className=" bg-sky-300 mx-32 rounded-md hover:bg-sky-500" disabled={processing}>Змінити</button>
                     </div>
                 </form>
                 

@@ -1,20 +1,21 @@
-// import Sale1 from "storage/sales/Sale1.jpg"
-// import Sale2 from "storage/sales/Sale2.jpg"
-// import Sale3 from "storage/sales/Sale3.jpg"
-// import Sale4 from "storage/sales/Sale4.jpg"
-// import Sale5 from "storage/sales/Sale5.jpg"
-// import Sale6 from "storage/sales/Sale6.jpg"
-// import Sale7 from "storage/sales/Sale7.jpg"
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick/lib/slider";
 export default function Sales(){
+    var settings={
+        dots:true,
+        infinite:true,
+    }
     return(
-        <div>
-            <img src="storage/sales/Sale1.jpg"/>
-            {/* <img src={Sale2}/>
-            <img src={Sale3}/>
-            <img src={Sale4}/>
-            <img src={Sale5}/>
-            <img src={Sale6}/>
-            <img src={Sale7}/> */}
-        </div>
+        <Slider settings>
+            <div><img src="storage/sales_img/sale1.jpg"/></div>    
+            <div><img src="storage/sales_img/sale2.jpg"/></div>
+            <div><img src="storage/sales_img/sale3.jpg"/></div>
+            <div><img src="storage/sales_img/sale4.jpg"/></div>
+            <div><img src="storage/sales_img/sale5.jpg"/></div>
+            <div><img src="storage/sales_img/sale6.jpg"/></div>
+            <div><img src="storage/sales_img/sale7.jpg"/></div>
+                               
+        </Slider>
     )
 }

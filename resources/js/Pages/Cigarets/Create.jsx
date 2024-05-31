@@ -3,16 +3,14 @@ export default function Create(){
     const { data, setData, post, processing, reset } = useForm({
         name: "",
         price: "",
-        class: "",
+        nicotine: "",
         image: "",
         });
         function submit(e) {
             e.preventDefault();
-            post('/admin/beer/create',{
+            post('/admin/cigarets/create',{
                 onFinish: () => reset(),
-            });
-
-        }; 
+            });}; 
     return(
         <form onSubmit={submit}>
                     
@@ -36,13 +34,13 @@ export default function Create(){
                         onChange={(e) => setData("price", e.target.value)}
                     />
                     <input
-                        id="class"
-                        name="class"
-                        value={data.class}
-                        placeholder="Класифікація"
+                        id="nicotine"
+                        name="nicotine"
+                        value={data.nicotine}
+                        placeholder="Нікотин/смоли"
                         className="mx-6 mb-6 block w-auto bg-white border-slate-200 
                         border-2 placeholder:px-3 placeholder-zinc-400"
-                        onChange={(e) => setData("class", e.target.value)}
+                        onChange={(e) => setData("nicotine", e.target.value)}
                     />
                     <input
                         id="image"

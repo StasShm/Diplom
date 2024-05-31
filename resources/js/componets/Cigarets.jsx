@@ -1,6 +1,11 @@
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick/lib/slider";
 export default function  Cigarets({cigarets}){
     return(
-       <>{cigarets.map((cigaret) => (
+       <>
+       <Slider>
+       {cigarets.map((cigaret) => (
         <div key={cigaret.id} >
             <div>
                 <img src={cigaret.image} />
@@ -13,6 +18,6 @@ export default function  Cigarets({cigarets}){
        )
 
 
-    )}</>
+    )}</Slider></>
     )
 }
