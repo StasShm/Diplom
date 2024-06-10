@@ -1,4 +1,5 @@
 import { Link, useForm } from '@inertiajs/react';
+import "../../css/Admin.css"
 export default function Admin({auth}){
     const { data, setData, post, processing, reset } = useForm({
         email: "",
@@ -11,19 +12,18 @@ export default function Admin({auth}){
     
 
     return(
-        <>{auth?.user == null &&
+        <><div className='Form'>{auth?.user == null &&
            
          
-        <form onSubmit={submit}>
-                    <h1 className="text-center py-3 font-bold font text-xl font-comfortaa">Увійти</h1>
+        <form onSubmit={submit} className='LoginForm'>
+                    <h1>Увійти</h1>
                     <div className="flex items-stretch flex-col">
                     <input
                         id="email"
                         name="email"
                         value={data.email}
                         placeholder="Email"
-                        className="mx-6 mb-6  w-auto bg-white border-slate-200 
-                        border-2 placeholder:px-3 placeholder-zinc-400 " 
+                        className="AdminInput" 
                         autoComplete="username"
                         onChange={(e) => setData("email", e.target.value)}
                     />
@@ -33,22 +33,34 @@ export default function Admin({auth}){
                         name="password"
                         value={data.password}
                         placeholder="Пароль"
-                        className="mx-6 mb-6 block w-auto bg-white border-slate-200 
-                        border-2 placeholder:px-3 placeholder-zinc-400"
+                        className="AdminInput"
                         autoComplete="current-password"
                         onChange={(e) => setData("password", e.target.value)}
                     />
-                <button type="submit" className=" bg-sky-300 mx-32 rounded-md hover:bg-sky-500" disabled={processing}>Увійти</button>
+                <button type="submit" className=" LoginButton" disabled={processing}>Увійти</button>
                     </div>
+                    
                 </form>
                 
-            }  
-            <Link href="/admin/news/create">Додати новину</Link>
+                
+            }  </div>
+            <div className='LinksHolder'>
+            <Link href="/admin/news/index" className='Links'>Новини</Link><br/>
+            <Link href="/admin/markers/index" className='Links'>Маркери</Link><br/>
+            <Link href="/admin/alcohols/index" className='Links'>Алкогольні напої</Link><br/>
+            <Link href="/admin/cigarets/index" className='Links'>Цигарки</Link><br/>
+            <Link href="/admin/snacks/index" className='Links'>Снеки</Link><br/>
+            <Link href="/admin/others/index" className='Links'>Інші товари</Link><br/>
+            <Link href="/admin/beers/index" className='Links'>Пиво</Link><br/>
             
-            <Link href="/admin/alcohols/create">Додати алкоголь</Link>  
-            <Link href="/admin/cigarets/create">Додати цигарки</Link>
-            <Link href="/admin/snacks/create">Додати снеки</Link>
-            <Link href="/admin/others/create">Додати інші товари</Link>
-            </>         
+            </div>
+            <div className='LinksOutHolder'>
+            <Link href="/" className='LinksOut'>На головну</Link>
+            { auth.user &&
+            <Link href="/logout" method="post" className='LinksOut' as='button'>Вийти</Link>
+            }       
+            </div>
+
+            </>             
     )
 }

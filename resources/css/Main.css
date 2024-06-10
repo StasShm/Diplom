@@ -1,0 +1,38 @@
+.MainText{
+    align-items: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.MainSlider{
+    display: flex;
+   max-width: 1920px;
+    padding: 15px;
+    
+}
+.slick-slider{
+    width: 100%;
+}
+.slick-slide img{
+    width: 100%;
+    display: flex;
+    
+}
+.slick-next{
+right:84px;
+z-index: 10;
+}
+.slick-prev{
+    left: 25px;
+    z-index:10 ;
+}
+.slick-arrow::before{
+    font-size: 100px;
+    
+}
+.slick-dots li button:before{
+    color:white;
+}
+.slick-dots li.slick-active button:before{
+   color: rgb(223, 79, 66);
+}

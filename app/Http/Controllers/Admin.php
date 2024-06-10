@@ -1,4 +1,4 @@
-<?php
+'<?php
 
 namespace App\Http\Controllers;
 
@@ -22,4 +22,13 @@ class Admin extends Controller
         } 
         return to_route('main');
     }
-}
+    public function logout(Request $request)
+    {
+        auth()->logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return to_route('main');
+    }
+}'

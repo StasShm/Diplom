@@ -21,6 +21,7 @@ class NewsController extends Controller
 
     public function create()
     {return inertia('News/Create');}
+    
     public function index()
     {return inertia('News/Index',[
         'news'=>News::all(),

@@ -1,4 +1,6 @@
-import { useForm } from '@inertiajs/react';
+import { useForm,Link } from '@inertiajs/react';
+import "../../../css/Admin.css"
+import "../../../css/Create.css"
 export default function Create(){
     const { data, setData, post, processing, reset } = useForm({
         image: "",
@@ -10,18 +12,17 @@ export default function Create(){
             e.preventDefault();
             post('/admin/news/create',{
                 onFinish: () => reset(),
-            });}
+            });};
     return(
-        <form onSubmit={submit}>
+        <><form onSubmit={submit} className='Form'>
                     
-                    <div className="flex items-stretch flex-col">
+                    <div className="FormInputWrapper">
                     <input
                         id="image"
                         name="image"
                         value={data.image}
                         placeholder="Шлях до фото"
-                        className="mx-6 mb-6  w-auto bg-white border-slate-200 
-                        border-2 placeholder:px-3 placeholder-zinc-400 " 
+                        className="FormInput" 
                         onChange={(e) => setData("image", e.target.value)}
                     />
                     <input
@@ -29,25 +30,24 @@ export default function Create(){
                         name="title"
                         value={data.title}
                         placeholder="Заголовок"
-                        className="mx-6 mb-6 block w-auto bg-white border-slate-200 
-                        border-2 placeholder:px-3 placeholder-zinc-400"
+                        className="FormInput"
                         onChange={(e) => setData("title", e.target.value)}
                     />
                     <input
                         id="main"
                         name="main"
-                        
                         value={data.main}
                         placeholder="Новина"
-                        className="mx-6 mb-6 block w-auto bg-white border-slate-200 
-                        border-2 placeholder:px-3 placeholder-zinc-400"
+                        className="FormInput" 
                         onChange={(e) => setData("main", e.target.value)}
                     />
                    
-                <button type="submit" className=" bg-sky-300 mx-32 rounded-md hover:bg-sky-500" disabled={processing}>Створити</button>
+                
                     </div>
+                    <button type="submit" className="LinksOut" disabled={processing}>Створити</button>
+                <Link href='/admin/news/index' className="LinksOut">Повернутися</Link>
                 </form>
                 
-            
+                </>
     )
 }

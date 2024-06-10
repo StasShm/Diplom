@@ -1,4 +1,6 @@
 import { useForm, Link } from '@inertiajs/react';
+import "../../../css/Admin.css"
+import "../../../css/Create.css"
 export default function Create(){
     const { data, setData, post, processing, reset } = useForm({
         name: "",
@@ -15,16 +17,15 @@ export default function Create(){
         }; 
     return(
         <>
-        <form onSubmit={submit}>
+        <form onSubmit={submit} className='Form'>
                     
-                    <div className="flex items-stretch flex-col">
+            <div className="FormInputWrapper">
                     <input
                         id="name"
                         name="name"
                         value={data.name}
                         placeholder="Назва"
-                        className="mx-6 mb-6  w-auto bg-white border-slate-200 
-                        border-2 placeholder:px-3 placeholder-zinc-400 " 
+                        className="FormInput"
                         onChange={(e) => setData("name", e.target.value)}
                     />
                     <input
@@ -32,8 +33,7 @@ export default function Create(){
                         name="price"
                         value={data.price}
                         placeholder="Ціна"
-                        className="mx-6 mb-6 block w-auto bg-white border-slate-200 
-                        border-2 placeholder:px-3 placeholder-zinc-400"
+                        className="FormInput"
                         onChange={(e) => setData("price", e.target.value)}
                     />
                     <input
@@ -41,8 +41,7 @@ export default function Create(){
                         name="class"
                         value={data.class}
                         placeholder="Класифікація"
-                        className="mx-6 mb-6 block w-auto bg-white border-slate-200 
-                        border-2 placeholder:px-3 placeholder-zinc-400"
+                        className="FormInput"
                         onChange={(e) => setData("class", e.target.value)}
                     />
                     <input
@@ -50,14 +49,14 @@ export default function Create(){
                         name="image"
                         value={data.image}
                         placeholder="Шлях до фото"
-                        className="mx-6 mb-6 block w-auto bg-white border-slate-200 
-                        border-2 placeholder:px-3 placeholder-zinc-400"
+                        className="FormInput"
                         onChange={(e) => setData("image", e.target.value)}
                     />
-                <button type="submit" className=" bg-sky-300 mx-32 rounded-md hover:bg-sky-500" disabled={processing}>Створити</button>
                     </div>
+                <button type="submit" className="LinksOut" disabled={processing}>Створити</button>
+                    <Link href='/admin/beers/index' className="LinksOut">Повернутися</Link>
                 </form>
-                <Link href='/admin'>Повернутися</Link></>
+                </>
                 
             
     )

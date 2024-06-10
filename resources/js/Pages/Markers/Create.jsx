@@ -1,4 +1,6 @@
-import { useForm } from '@inertiajs/react';
+import { useForm,Link } from '@inertiajs/react';
+import "../../../css/Admin.css"
+import "../../../css/Create.css"
 export default function Create(){
     const { data, setData, post, processing, reset } = useForm({
         x: "",
@@ -13,16 +15,15 @@ export default function Create(){
                 onFinish: () => reset(),
             });}
     return(
-        <form onSubmit={submit}>
+        <><form onSubmit={submit} className='Form'>
                     
-                    <div className="flex items-stretch flex-col">
+                    <div className="FormInputWrapper">
                     <input
                         id="x"
                         name="x"
                         value={data.x}
                         placeholder="X-координата"
-                        className="mx-6 mb-6  w-auto bg-white border-slate-200 
-                        border-2 placeholder:px-3 placeholder-zinc-400 " 
+                        className="FormInput"
                         onChange={(e) => setData("x", e.target.value)}
                     />
                     <input
@@ -30,8 +31,7 @@ export default function Create(){
                         name="y"
                         value={data.y}
                         placeholder="Y-координата"
-                        className="mx-6 mb-6 block w-auto bg-white border-slate-200 
-                        border-2 placeholder:px-3 placeholder-zinc-400"
+                        className="FormInput"
                         onChange={(e) => setData("y", e.target.value)}
                     />
                     <input
@@ -39,15 +39,16 @@ export default function Create(){
                         name="adress"
                         value={data.adress}
                         placeholder="Адреса"
-                        className="mx-6 mb-6 block w-auto bg-white border-slate-200 
-                        border-2 placeholder:px-3 placeholder-zinc-400"
+                        className="FormInput"
                         onChange={(e) => setData("adress", e.target.value)}
                     />
                     
-                <button type="submit" className=" bg-sky-300 mx-32 rounded-md hover:bg-sky-500" disabled={processing}>Створити</button>
-                    </div>
-                </form>
                 
+                    </div>
+                    <button type="submit" className="LinksOut" disabled={processing}>Створити</button>
+                    <Link href='/admin/markers/index' className="LinksOut">Повернутися</Link>
+                </form>
+                </>
             
     )
 }

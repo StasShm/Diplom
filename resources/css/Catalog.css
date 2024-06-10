@@ -1,0 +1,26 @@
+.Sliders{
+    
+        display: flex;
+       max-width: 1920px;
+        padding: 15px;
+        margin-bottom: 60px;
+   
+}
+.slick-slide{
+    max-height: 750px;
+    border: 2px solid rgb(223, 79, 66);
+    background-color: #343131;
+    
+}
+.slick-slide img{
+    height: 500px;
+    margin-bottom: 7px;
+}
+.slick-track{
+    gap: 20px;
+    display: flex;
+}
+.slick-slide p{
+    color: white;
+    margin-left: 5px ;
+}

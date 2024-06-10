@@ -1,14 +1,17 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick/lib/slider";
+import Slider from "react-slick";
 export default function Sales(){
     var settings={
-        dots:true,
+        
         infinite:true,
-    }
+        arrows:true,
+        slidesToShow: 2,
+        }
     return(
-        <Slider settings>
-            <div><img src="storage/sales_img/sale1.jpg"/></div>    
+        
+        <Slider {...settings}>
+            <div><img src="storage/sales_img/sale1.jpg" /></div>    
             <div><img src="storage/sales_img/sale2.jpg"/></div>
             <div><img src="storage/sales_img/sale3.jpg"/></div>
             <div><img src="storage/sales_img/sale4.jpg"/></div>
@@ -17,5 +20,6 @@ export default function Sales(){
             <div><img src="storage/sales_img/sale7.jpg"/></div>
                                
         </Slider>
-    )
+        
+        )
 }

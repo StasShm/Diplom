@@ -18,7 +18,7 @@ class AlcoholController extends Controller
     ]);
 
     Alcohol::Create($data); 
-    return to_route('snacks.create');}
+    return to_route('alcohols.create');}
 
     public function create()
     {return inertia('Alcohols/Create');}

@@ -1,12 +1,16 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick/lib/slider";
+import '../../css/Catalog.css'
 export default function  Beer({beers}){
     var settings ={
         slidesToShow: 4,
+        dots:true,
+        infinite:true,
+        slidesToScroll: 4,
     }
     return(
-       <>
+       <div className="Sliders">
        <Slider {...settings}>
         {beers.map((beer) => (
         <div key={beer.id} >
@@ -21,7 +25,7 @@ export default function  Beer({beers}){
        )
 
 
-    )}</Slider></>
+    )}</Slider></div>
     )
 }
 

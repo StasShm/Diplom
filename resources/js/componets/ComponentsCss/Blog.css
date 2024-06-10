@@ -1,0 +1,26 @@
+.Post{
+    display: flex;
+    align-items: flex-start; 
+    padding: 20px;
+    border: 5px solid rgb(223, 79, 66);
+    background-color: #201e1e;
+    margin: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .PostImg {
+    display: flex;
+    max-width: 750px; 
+    margin-right: 30px; 
+    width: 100%;
+  }
+  .BlogBody{
+    background-color:#201e1e ;
+    width: 100%;
+  }
+  .PostText{
+    display: flex;
+  flex-direction: column;
+  color: aliceblue;
+  margin-left: 10px;
+  }

@@ -9,16 +9,17 @@ import Header from "../componets/header";
 export default function  Catalog({beer,alcohol,snack,cigaret,other}){
     
     return(
-       <>
+       
+     <>
        <Header />
        <Beer beers = {beer} />
        <Alcohol alcohols={alcohol} />
         <Snacks snacks={snack}/> 
         <Cigarets cigarets={cigaret} />
         <Other others={other} />
-
-       <Footer />
+        <Footer />
        </>
+        
 
     )
 }

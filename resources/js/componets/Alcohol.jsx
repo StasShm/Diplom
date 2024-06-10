@@ -2,17 +2,19 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick/lib/slider";
 export default function Alcohol({ alcohols }) {
-    var settings = {
-        slidesToShow: 4, 
-      };
+    var settings ={
+        slidesToShow: 4,
+        dots:true,
+        infinite:true,
+        slidesToScroll: 4,
+    };
     return (
-        <>
         
+        <div className="Sliders">
             <Slider {...settings}>
                 {alcohols.map((alcohol) => (
 
                     <div key={alcohol.id} >
-
                         <div>
                             <img src={alcohol.image} />
                             <p>{alcohol.name}</p>
@@ -20,10 +22,9 @@ export default function Alcohol({ alcohols }) {
                             <p>{alcohol.volume}Л</p>
                             <p>{alcohol.price}₴</p>
                         </div>
-
                     </div>
 
                 ))}
-            </Slider></>
+            </Slider></div>
     )
 }

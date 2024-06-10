@@ -1,0 +1,31 @@
+.TableContainer{
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+.Tables{
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 1920px;
+    overflow-x: auto;
+
+}
+.TableContainer thead {
+    background-color: #ffffff;
+    
+}
+.TableContainer th, .TableContainer td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 2px solid rgb(0, 0, 0);;
+}
+.TableContainer th {
+    background-color: #ffffff;
+}
+
+.TableContainer tbody tr:nth-child(even) {
+    background-color: #3a3a3a;
+}

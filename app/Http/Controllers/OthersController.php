@@ -20,6 +20,6 @@ class OthersController extends Controller
     {return inertia('Others/Create');}
     public function index()
     {return inertia('Others/Index',[
-        'cigarets'=>Other::all(),
+        'others'=>Other::all(),
     ]);}
 }
